@@ -37,6 +37,8 @@ public class ConnPostClient {
         CloseableHttpResponse response = null;
         try {
             post.setEntity(new UrlEncodedFormEntity(pairs,"UTF-8"));
+            post.setHeader("Content-Type", "application/json;charset=UTF-8");
+            post.setHeader("dataType", "json");
             response = httpClient.execute(post);
             if(response != null && response.getStatusLine().getStatusCode() == 200)
             {
@@ -79,6 +81,8 @@ public class ConnPostClient {
         CloseableHttpResponse response = null;
         try {
             post.setEntity(new ByteArrayEntity(jsonString.getBytes("UTF-8")));
+            post.setHeader("Content-Type", "application/json;charset=UTF-8");
+            post.setHeader("dataType", "json");
             response = httpClient.execute(post);
             if(response != null && response.getStatusLine().getStatusCode() == 200)
             {
