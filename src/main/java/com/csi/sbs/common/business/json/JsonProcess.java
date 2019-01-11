@@ -26,5 +26,13 @@ public class JsonProcess {
 	   public static String returnValue(JSONObject jsonObject,String key){
 		   return jsonObject.getString(key);
 	   }
+	   
+	   /**
+	    * 将实体对象转换为JSON
+	    * @param <T>
+	    */
+	   public static <T> String changeEntityTOJSON(T t){
+		   return JSONObject.toJSONString(t);
+	   }
 
 }
